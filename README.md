@@ -1,4 +1,15 @@
-# Foxx TypeScript Service Template
+# Shared Modules
+
+### Link This Service
+
+This service provides `"shared": "0.0.0"`, so to use it in your Foxx service you need to update your `dependencies` in `manifest.json` like so:
+
+```json
+"dependencies": {
+  /* ... */
+  "shared": "shared:^0.0.0"
+},
+```
 
 ### Install packages
 

@@ -4,7 +4,13 @@
   "engines": {
     "arangodb": "^3.0.0"
   },
-  "name": "foxx_typescript",
+  "scripts": {
+    "setup": "dist/scripts/setup.js"
+  },
+  "provides": {
+    "shared": "0.0.0"
+  },
+  "name": "shared",
   "version": "0.0.0",
   "tests": "test/**/*.js"
 }
