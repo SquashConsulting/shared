@@ -1,6 +1,15 @@
 import { db } from "@arangodb";
 
 import { Request } from "../interfaces";
+import { User, Session } from "../models";
+
+const {
+  collections: {
+    auth: {
+      documents: { sessions, users }
+    }
+  }
+} = module.context.configuration;
 
 export function clientSession(
   req: Request,
@@ -11,13 +20,11 @@ export function clientSession(
 
   if (!sid) res.throw("unauthorized");
 
-  const session: ArangoDB.Document = db
-    ._collection("auth_sessions")
-    .firstExample({ _key: sid });
+  const session: Session = db._collection(sessions).firstExample({ _key: sid });
 
   if (session) {
-    const sessionUser: ArangoDB.Document = db
-      ._collection("auth_users")
+    const sessionUser: User = db
+      ._collection(users)
       .firstExample({ _key: session.uid });
 
     req.currentUser = sessionUser;

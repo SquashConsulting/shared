@@ -4,11 +4,31 @@
   "engines": {
     "arangodb": "^3.0.0"
   },
-  "scripts": {
-    "setup": "dist/scripts/setup.js"
-  },
   "provides": {
     "shared": "0.0.0"
+  },
+  "configuration": {
+    "collections": {
+      "type": "json",
+      "description": "shared collections",
+      "default": {
+        "auth": {
+          "documents": {
+            "users": "auth_users",
+            "sessions": "auth_sessions"
+          },
+          "edges": {}
+        },
+        "interactions": {
+          "documents": {
+            "services": "services"
+          },
+          "edges": {
+            "interactedWith": "interacted_with"
+          }
+        }
+      }
+    }
   },
   "name": "shared",
   "version": "0.0.0",
