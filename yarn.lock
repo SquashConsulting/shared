@@ -97,19 +97,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"auth@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "auth@workspace:."
-  dependencies:
-    "@types/arangodb": ^3.5.3
-    "@types/node": ^13.5.0
-    "@yarnpkg/pnpify": ^2.0.0-rc.16
-    joi: ^14.3.1
-    tslint: ^6.0.0
-    typescript: ^3.7.5
-  languageName: unknown
-  linkType: soft
-
 "balanced-match@npm:^1.0.0":
   version: 1.0.0
   resolution: "balanced-match@npm:1.0.0"
@@ -474,6 +461,19 @@ resolve@^1.3.2:
   checksum: dce4680e58a60e12fd7ec1f274635267206e466eaca54e3238f7c49baf33ba07aae8fe8f002a0cf6ec3e8c6f1ccbf158e8f59acc89c1777063e93eb239fe8b76
   languageName: node
   linkType: hard
+
+"shared@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "shared@workspace:."
+  dependencies:
+    "@types/arangodb": ^3.5.3
+    "@types/node": ^13.5.0
+    "@yarnpkg/pnpify": ^2.0.0-rc.16
+    joi: ^14.3.1
+    tslint: ^6.0.0
+    typescript: ^3.7.5
+  languageName: unknown
+  linkType: soft
 
 "shebang-command@npm:^1.2.0":
   version: 1.2.0

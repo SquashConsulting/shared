@@ -4,7 +4,33 @@
   "engines": {
     "arangodb": "^3.0.0"
   },
-  "name": "foxx_typescript",
+  "provides": {
+    "shared": "0.0.0"
+  },
+  "configuration": {
+    "collections": {
+      "type": "json",
+      "description": "shared collections",
+      "default": {
+        "auth": {
+          "documents": {
+            "users": "auth_users",
+            "sessions": "auth_sessions"
+          },
+          "edges": {}
+        },
+        "interactions": {
+          "documents": {
+            "services": "services"
+          },
+          "edges": {
+            "interactedWith": "interacted_with"
+          }
+        }
+      }
+    }
+  },
+  "name": "shared",
   "version": "0.0.0",
   "tests": "test/**/*.js"
 }

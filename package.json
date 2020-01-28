@@ -1,5 +1,5 @@
 {
-  "name": "auth",
+  "name": "shared",
   "version": "0.0.0",
   "description": "Foxx TypeScript Service",
   "main": "dist/entry.js",
@@ -7,7 +7,10 @@
   "private": true,
   "scripts": {
     "build": "tsc -p .",
-    "config:editor": "yarn pnpify --sdk"
+    "config:editor": "yarn pnpify --sdk",
+    "setup": "foxx server set squash http://localhost:8529 --database squash && yarn run install:service",
+    "install:service": "yarn build && foxx install /shared --server squash --database squash",
+    "upgrade:service": "yarn build && foxx upgrade /shared --server squash --database squash"
   },
   "devDependencies": {
     "@types/arangodb": "^3.5.3",

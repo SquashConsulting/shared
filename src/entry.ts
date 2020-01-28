@@ -1,3 +1,8 @@
-import router from "./routes";
+import * as MIDDLEWARES from "./middlewares";
 
-module.context.use(router);
+const COLLECTIONS = module.context.configuration.collections;
+
+module.exports = {
+  COLLECTIONS,
+  MIDDLEWARES
+};
